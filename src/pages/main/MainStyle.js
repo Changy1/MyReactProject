@@ -5,7 +5,7 @@ export const MainWrapper = styled.div`
     position: fixed;
     height: 100%;
     width: 100%;
-    top: 0 
+    top: 0 ;
 `
 
 export const MainIcon = styled.div`
