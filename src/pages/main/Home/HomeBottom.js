@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BottomForHome, LiForBottom } from './Styled'
-import HomeList from './HomeList'
+import GoodsList from '@c/Goods/GoodsList'
 
 class HomeBottom extends Component {
     state = {
@@ -31,7 +31,7 @@ class HomeBottom extends Component {
                 <div className = 'bottom-nav'>
                     { this.rendernav() }
                 </div>
-                <HomeList />
+                <GoodsList />
             </BottomForHome>
         )
     }

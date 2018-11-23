@@ -6,10 +6,12 @@ export const HomeWrapper = styled.div`
 `
 
 export const SwiperForHome = styled.div`
-    position: relative;
     width: 100%;
     height: 3.866667rem;
     background: black;
+    ul {
+        height: 3.866667rem !important; 
+    }
 `
 export const MiddleForHome = styled.div`
     height: 2.226667rem;
@@ -164,74 +166,3 @@ export const LiForBottom = styled.div`
     border-bottom: ${props => props.active ? '.053333rem solid #ff464e' : ''};
 
 `
-
-export const ListForHome = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-`
-
-export const ItemForHome = styled.div`
-    width: 4.946667rem;
-    margin-right: .053333rem;
-    margin-top: .053333rem;
-    background: #fff;
-    .item-img {
-        position: relative;
-        width: 100%;
-        height: 4.986667rem;
-        background: #fff;
-        .img-float_bottom {
-            z-index: 2;
-            position: absolute;
-            bottom: -.333333rem;
-            right: .213333rem;
-            border: .013333rem solid #ebebeb;
-            background-color: #fff;
-            width: 1.36rem;
-            height: .693333rem;
-            img {
-                width: 100%;
-                height: 100%;
-                display: block;
-            }
-        }
-        .img-float_top {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 1.2rem;
-            height: 1.2rem;
-        }
-    }
-    .item-title {
-        padding: 0 .213333rem;
-        margin-top: .16rem;
-        span {
-            font-size: .4rem;
-            color: #ff464e;
-            line-height: .586667rem;
-        }
-    }
-    .item-small {
-        padding-left: .213333rem;
-        margin-bottom: .32rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .small-one {
-            color: #3b3b3b;
-            font-size: .32rem;
-            width: 3.106667rem;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        .small-two {
-            color: #bbbbbb;
-            font-size: .266667rem;
-            margin-right: .213333rem;
-        }
-    }
-`   
