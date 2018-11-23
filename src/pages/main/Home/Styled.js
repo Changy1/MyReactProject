@@ -142,3 +142,12 @@ export const PicForHome = styled.div`
     }
 
 `
+
+export const BottomForHome = styled.div`
+    width: 100%;
+    margin-top: .266667rem;
+    .bottom-nav {
+        height: 1.173333rem;
+        background: #fff;
+    }
+`

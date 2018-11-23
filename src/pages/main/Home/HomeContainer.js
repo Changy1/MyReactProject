@@ -4,6 +4,7 @@ import HomeHeader from './HomeHeader'
 import HomeSwiper from './HomeSwiper'
 import HomeMiddle from './HomeMiddle'
 import HomePic from './HomePic'
+import HomeBottom from './HomeBottom'
 
 class HomeContainer extends Component {
     render () {
@@ -13,6 +14,7 @@ class HomeContainer extends Component {
                 <HomeSwiper />
                 <HomeMiddle />
                 <HomePic />
+                <HomeBottom />
             </HomeWrapper>
         )
     }
