@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
-import { RightForList } from './ClassifyStyled'
+import { RightForList, RightForItem } from './ClassifyStyled'
 
 class ClassifyRightList extends Component {
+    renderItem () {
+        return this.props.items.map( item => (
+            <RightForItem key = { item.id }>
+                <img alt= '' src = { `//s2.juancdn.com${ item.icon }` } />
+                <span>{ item.name }</span>
+                {
+                    parseInt(item.icon_type) ? ( <div>HOT</div> ) : ''
+                }
+            </RightForItem>
+        ))
+    }
     render () {
         return (
             <RightForList>
-                    123124525
+                { this.renderItem() }
             </RightForList>
         )
     }
