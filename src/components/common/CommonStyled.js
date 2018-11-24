@@ -10,6 +10,11 @@ export const InputForSearch = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .leftimg {
+        transform: rotate(180deg);
+        height: .533333rem;
+        padding-left: .32rem;
+    }
     .left {
         border: none;
         flex-grow: 1;

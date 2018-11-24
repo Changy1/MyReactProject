@@ -7,7 +7,7 @@ class Search extends Component {
     render () {
         return (
             <SearchWrapper>
-                <SearchInput home = {false}/>
+                <SearchInput />
                 <SearchList />
             </SearchWrapper>
         )
