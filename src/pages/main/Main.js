@@ -18,7 +18,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'others',
+      selectedTab: 'home',
       mainitem: [
         { id: uuid(), title: '首页', selected: 'home', component: <HomeContainer />, icons: { default: HomeImg, active: HomeImgActive } },
         { id: uuid(), title: '分类', selected: 'others', component: <ClassifyContainer />, icons: { default: OthersImg, active: OthersImgActive } },

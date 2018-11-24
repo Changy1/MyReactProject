@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { HomeWrapper } from './Styled'
-import HomeHeader from './HomeHeader'
+import SearchInput from '@c/common/SearchInput'
 import HomeSwiper from './HomeSwiper'
 import HomeMiddle from './HomeMiddle'
 import HomePic from './HomePic'
@@ -10,7 +10,7 @@ class HomeContainer extends Component {
     render () {
         return (
             <HomeWrapper>
-                <HomeHeader />
+                <SearchInput home = {true} />
                 <HomeSwiper />
                 <HomeMiddle />
                 <HomePic />
