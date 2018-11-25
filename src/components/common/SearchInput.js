@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { InputForSearch } from './CommonStyled'
 import SearchImg from '@as/images/search.png'
 import JuanpiImg from '@as/images/juanpi.png'
@@ -25,7 +25,7 @@ class SearchInput extends Component {
                             <span className = 'search-text'>搜索</span>
                         </Link> 
                     ) : (
-                        <input className = 'left' type = 'text' style = {{paddingLeft: '10px'}} placeholder = '搜索'/>
+                        <input onKeyUp = { this.searchWhat } className = 'left' type = 'text' style = {{paddingLeft: '10px'}} placeholder = '搜索'/>
                     )
                 }
                 <div className = 'right'>
@@ -36,6 +36,12 @@ class SearchInput extends Component {
             </InputForSearch>
         )
     }
+    searchWhat = (e) => {
+        if ( e.keyCode === 13) {
+            let text = e.target.value
+            this.props.history.push(`/result?key=${text}`)
+        } 
+    }
 }
 
-export default SearchInput
+export default withRouter(SearchInput)

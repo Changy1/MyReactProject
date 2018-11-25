@@ -1,13 +1,6 @@
 import styled from 'styled-components'
 
 
-export const ListForGoods = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-`
-
 export const ItemForGoods = styled.div`
     width: 4.946667rem;
     margin-right: .053333rem;

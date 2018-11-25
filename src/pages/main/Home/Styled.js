@@ -118,3 +118,10 @@ export const LiForBottom = styled.div`
     border-bottom: ${props => props.active ? '.053333rem solid #ff464e' : ''};
 
 `
+
+export const ListForGoods = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+`

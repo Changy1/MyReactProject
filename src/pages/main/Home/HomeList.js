@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { ListForGoods } from '@c/Goods/GoodsStyled'
-import GoodsItem from './GoodsItem'
+import { ListForGoods } from './Styled'
+import GoodsItem from '@c/Goods/GoodsItem'
 import axios from 'axios'
 
-class GoodsList extends Component {
+class HomeList extends Component {
     state = {
         items:[]
     }
@@ -30,4 +30,4 @@ class GoodsList extends Component {
 }
 
 
-export default GoodsList
+export default HomeList
