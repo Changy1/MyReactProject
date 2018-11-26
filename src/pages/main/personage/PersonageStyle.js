@@ -13,33 +13,6 @@ export const HeaderForPersonage = styled.div`
     background-size: 100% auto;
 `
 
-export const TopForPersonage = styled.div`
-    line-height: 1.173333rem;
-    height: 1.173333rem;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    color: #fff;
-    a {
-        height: 1.173333rem;
-        line-height: 1.173333rem;
-        flex-grow: 0;
-        font-size: .373333rem;
-        width: 1.333333rem;
-        text-align: right;
-        padding-right: .4rem; 
-    }
-    span {
-        flex-grow: 1;
-        font-size: .48rem;  
-        text-align: center;
-    }
-    .img {
-        background: ${`url(${RightImg}) no-repeat center center`};
-        background-size: .333333rem;
-        transform: rotate(180deg);
-    }
-`
 
 export const MessageForPersonage = styled.div`
     margin: .666667rem 0;

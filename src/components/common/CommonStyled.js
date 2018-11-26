@@ -1,11 +1,13 @@
 import styled from 'styled-components'
+import RightImg from '@as/images/right.png'
+import BackgroundImg from '@as/images/background.png'
 
 export const InputForSearch = styled.div`
+    background: #fff;
     box-sizing: border-box;
     width: 100%;
     height: 1.173333rem;
     padding-left: .373333rem;
-    background: #fff;
     border-bottom: 1px solid #f2f2f2;
     display: flex;
     justify-content: space-between;
@@ -54,5 +56,35 @@ export const InputForSearch = styled.div`
         img {
             height: 100%;
         }
+    }
+`
+
+export const TopForPersonage = styled.div`
+    background: ${`url(${BackgroundImg})`};
+    background-size: 100% auto;
+    line-height: 1.173333rem;
+    height: 1.173333rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    a {
+        height: 1.173333rem;
+        line-height: 1.173333rem;
+        flex-grow: 0;
+        font-size: .373333rem;
+        width: 1.333333rem;
+        text-align: right;
+        padding-right: .4rem; 
+    }
+    span {
+        flex-grow: 1;
+        font-size: .48rem;  
+        text-align: center;
+    }
+    .img {
+        background: ${`url(${RightImg}) no-repeat center center`};
+        background-size: .333333rem;
+        transform: rotate(180deg);
     }
 `

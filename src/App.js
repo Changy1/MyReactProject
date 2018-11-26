@@ -3,6 +3,7 @@ import { Route, Switch, Redirect} from 'react-router-dom'
 import Main from '@pages/main/Main'
 import Search from '@pages/search/Search'
 import Result from '@pages/result/Result'
+import Login from '@pages/login/Login'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Route path = '/main' component = { Main }></Route>
           <Route path = '/search' component = { Search }></Route>
           <Route path = '/result' component = { Result }></Route>
+          <Route path = '/login' component = { Login }></Route>
         </Switch>
       </div>
     );

@@ -124,4 +124,12 @@ export const ListForGoods = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    .many {
+        color: lightblue;
+        height: .8rem;
+        background: #fff;
+        line-height: .8rem;
+        text-align: center;
+        width: 100%;
+    }
 `
