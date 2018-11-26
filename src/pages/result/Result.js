@@ -7,12 +7,13 @@ import qs from 'querystring'
 
 class Result extends Component {
     render () {
-        console.log(qs.parse(this))
+        let _search = this.props.location.search.substring(1)
+        let _key = qs.parse(_search).key
         return (
             <ResultContainer>
                 <SearchInput result = { true } />
                 <ResultNav />
-                <ResultList />
+                <ResultList keystr = { _key } />
             </ResultContainer>
         )
     }

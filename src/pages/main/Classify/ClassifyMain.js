@@ -17,7 +17,6 @@ class ClassifyMain extends Component {
     componentDidMount () {
         // jsonp的第一个参数写url，第二个参数可以写?后面参数，第三个参数是回调函数，err，data
         jsonp('https://m.juanpi.com/cate/catelist?pf=8&area=4&bi=222&dtype=jsonp&_=1543026080702&callback=jsonp2', (err, data) => {
-            console.log(data)
             this.setState({
                 leftlist: data,
                 rightlist: data[this.state.id].secondCateList
