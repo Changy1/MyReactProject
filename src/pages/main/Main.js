@@ -5,6 +5,7 @@ import uuid from 'uuid'
 import HomeContainer from './Home/HomeContainer'
 import ClassifyContainer from './Classify/ClassifyContainer'
 import CarContainer from './ShoopingCar/CarContainer'
+import PersonageContainer from './personage/PersonageContainer'
 
 import HomeImg from '@as/images/home.png'
 import HomeImgActive from '@as/images/homeactive.png'
@@ -19,12 +20,12 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'car',
+      selectedTab: 'my',
       mainitem: [
         { id: uuid(), title: '首页', selected: 'home', component: <HomeContainer />, icons: { default: HomeImg, active: HomeImgActive } },
         { id: uuid(), title: '分类', selected: 'others', component: <ClassifyContainer />, icons: { default: OthersImg, active: OthersImgActive } },
         { id: uuid(), title: '购物车', selected: 'car', component: <CarContainer />, icons: { default: CarImg, active: CarImgActive } },
-        { id: uuid(), title: '我的卷皮', selected: 'my', component: '4', icons: { default: MyImg, active: MyImgActive } },
+        { id: uuid(), title: '我的卷皮', selected: 'my', component: <PersonageContainer />, icons: { default: MyImg, active: MyImgActive } },
       ]
     };
   }
