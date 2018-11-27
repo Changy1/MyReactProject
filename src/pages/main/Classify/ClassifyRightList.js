@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { RightForList, RightForItem } from './ClassifyStyled'
+import { withRouter } from 'react-router-dom'
 
 class ClassifyRightList extends Component {
     renderItem () {
         return this.props.items.map( item => (
-            <RightForItem key = { item.id }>
+            <RightForItem onClick = { () => { this.goDetail(item.id,item.name) }} key = { item.id }>
                 <img alt= '' src = { `//s2.juancdn.com${ item.icon }` } />
                 <span>{ item.name }</span>
                 {
@@ -13,13 +14,16 @@ class ClassifyRightList extends Component {
             </RightForItem>
         ))
     }
+    goDetail (id,title) {
+        this.props.history.push(`/detail?key=${id}&title=${title}`)
+    }
     render () {
         return (
-            <RightForList>
+            <RightForList >
                 { this.renderItem() }
             </RightForList>
         )
     }
 }
 
-export default ClassifyRightList
+export default withRouter(ClassifyRightList)

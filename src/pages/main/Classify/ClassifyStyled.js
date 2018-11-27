@@ -41,7 +41,7 @@ export const MainForClassify = styled.div`
 export const LeftForList = styled.div`
     width: 25%;
     height: calc(100vh - 2.8rem);
-    overflow: scroll;
+    overflow: hidden;
     background: #f9f9f9;
 `
 

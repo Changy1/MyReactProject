@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { LeftForList, LeftForItem } from './ClassifyStyled'
+import BScroll from 'better-scroll'
 
 class ClassifyLeftList extends Component {
     renderItem () {
@@ -16,10 +17,17 @@ class ClassifyLeftList extends Component {
     }
     render () {
         return (
-            <LeftForList>
-                { this.renderItem() }
+            <LeftForList ref = {el => this.el = el}>
+                <div>
+                    { this.renderItem() }
+                </div>
             </LeftForList>
         )
+    }
+    componentDidMount () {
+        new BScroll(this.el,{
+            click: true
+        })
     }
 }
 

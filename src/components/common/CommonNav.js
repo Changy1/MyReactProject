@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { NavForResult, NavItemForResult } from './ResultStyled'
+import { NavForResult, NavItemForResult } from './CommonStyled'
 import connect from '@connect'
 
-class ResultNav extends Component {
+class CommonNav extends Component {
     state = {
         navitems: [
             { id: 1, title: '推荐', has: false },
@@ -63,4 +63,4 @@ class ResultNav extends Component {
     }
 }
 
-export default connect(ResultNav,[{name: 'param', state: ['search']}])
+export default connect(CommonNav,[{name: 'param', state: ['search']}])

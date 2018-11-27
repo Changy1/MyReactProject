@@ -11,7 +11,7 @@ class SearchInput extends Component {
         return (
             <InputForSearch>
                 {
-                    this.props.result ? <img className = 'leftimg' src = {LeftImg} alt = '' /> : ''
+                    this.props.result ? <img onClick = { this.goback } className = 'leftimg' src = {LeftImg} alt = '' /> : ''
                 }
                 {
                     this.props.home ? (
@@ -35,6 +35,9 @@ class SearchInput extends Component {
                 </div>
             </InputForSearch>
         )
+    }
+    goback = () => {
+        this.props.history.go(-1)
     }
     searchWhat = (e) => {
         if ( e.keyCode === 13) {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ResultContainer } from './ResultStyled'
 import SearchInput from '@c/common/SearchInput'
-import ResultNav from './ResultNav'
+import CommonNav from '@c/common/CommonNav'
 import ResultList from './ResultList'
 import qs from 'querystring'
 
@@ -12,7 +12,7 @@ class Result extends Component {
         return (
             <ResultContainer>
                 <SearchInput result = { true } />
-                <ResultNav />
+                <CommonNav />
                 <ResultList keystr = { _key } />
             </ResultContainer>
         )

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import RightImg from '@as/images/right.png'
 import BackgroundImg from '@as/images/background.png'
+import LeftImg from '@as/images/left.png'
+import IconImg from '@as/images/icon.png'
 
 export const InputForSearch = styled.div`
     background: #fff;
@@ -8,7 +10,7 @@ export const InputForSearch = styled.div`
     width: 100%;
     height: 1.173333rem;
     padding-left: .373333rem;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: .013333rem solid #f2f2f2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,14 +62,15 @@ export const InputForSearch = styled.div`
 `
 
 export const TopForPersonage = styled.div`
-    background: ${`url(${BackgroundImg})`};
+    background: ${props => props.detail ? '#fff' : `url(${BackgroundImg})`};
     background-size: 100% auto;
     line-height: 1.173333rem;
     height: 1.173333rem;
     position: relative;
     display: flex;
     justify-content: space-around;
-    color: #fff;
+    align-items: center;
+    color: ${props => props.detail ? '#333' : `#fff`};
     a {
         height: 1.173333rem;
         line-height: 1.173333rem;
@@ -83,8 +86,43 @@ export const TopForPersonage = styled.div`
         text-align: center;
     }
     .img {
-        background: ${`url(${RightImg}) no-repeat center center`};
+        background: ${ props => props.detail ?  `url(${LeftImg}) no-repeat center center` : `url(${RightImg}) no-repeat center center` };
         background-size: .333333rem;
         transform: rotate(180deg);
     }
+    img {
+        margin-right: .533333rem;
+        height: .8rem;
+        width: .8rem;
+    }
+`
+
+export const NavItemForResult = styled.div`
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${ props => props.active ? '#ff464e' : '#333'};
+    .img {
+        background: ${ `url(${IconImg})` };
+        background-size: 1.306667rem;
+        ${props =>{
+            if ( props.price ) return 'width: .2rem ; height: .4rem ; margin-left: .133333rem;'
+            if ( props.select ) return 'width: .293333rem ; height: .346667rem; margin-left: .133333rem; background-position-x: -0.613333rem;'
+        }}
+        ${props => {
+            if ( props.price === 2) return 'background-position-x: -0.373333rem;'
+            if ( props.price === 3) return 'background-position-x: -0.186667rem;' 
+        }}
+    }
+`
+
+export const NavForResult = styled.div`
+    width: 100%;
+    background: #fff;
+    border-bottom: .013333rem solid #ebebeb;
+    display: flex;
+    justify-content: space-around;
+    height: .8rem;
+    padding: .133333rem 0;
 `

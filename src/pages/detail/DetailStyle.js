@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 import TopImg from '@as/images/top.png'
 
-export const ResultContainer = styled.div`
-    width: 100%;
-    height: 100%;
+export const DetailWrapper = styled.div`
+    width:100%;
 `
 
-export const ListForResult = styled.div`
+export const ListForDetail = styled.div`
     height: calc(100vh - 2.266667rem);
     width: 100%;
     overflow: hidden;
-    .context { 
+    .context {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-` 
+`
+
 
 export const TopForResult = styled.div`
     background-color: #fff;

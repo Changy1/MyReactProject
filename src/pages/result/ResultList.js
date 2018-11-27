@@ -16,6 +16,9 @@ class ResultList extends Component {
         }
         this.changeItems = this.changeItems.bind(this)
         this.backTop = this.backTop.bind(this)
+    }
+    // 这里清空参数，不能放到constructor里面
+    componentWillUnmount () {
         this.props.param_actions.changeSearchSort({ order: '', sort: ''})
     }
     changeItems(props) {
@@ -36,6 +39,9 @@ class ResultList extends Component {
                     this.scroll.refresh()
                 })
             })
+    }
+    loadingToast() {
+        Toast.loading('正在加载...', 1);
     }
     loadingToasttwo() {
         Toast.loading('正在加载...', 1, () => {
@@ -70,9 +76,6 @@ class ResultList extends Component {
     }
     backTop () {
         this.scroll.scrollTo( 0, 0, 500)
-    }
-    loadingToast() {
-        Toast.loading('正在加载...', 1);
     }
     // 在搜索页面直接进行搜索的时候需要调用这个钩子
     componentWillReceiveProps (props) {
