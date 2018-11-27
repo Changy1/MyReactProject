@@ -44,6 +44,7 @@ export const ListForResult = styled.div`
     .context { 
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 ` 
 
