@@ -23,6 +23,11 @@ class ResultList extends Component {
         let { search } = props.param
         axios.get(`api/search?keyword=${props.keystr}&item=&user_groupids=p8_c4_l4_222&page=${this.state.page}&is_ajax=1&order=${ search.order }&sort=${ search.sort }&cat_threeids=&price_range=&filter_id=`)    
             .then(res => {
+                // 当这里请求到的数据为空的时候，res.data.data.list为undefined，undefined和数组也可以合并，所以循环的时候拿不到undefined的属性，直接报错了
+                if ( !res.data.data.list ){
+                    this.loadingToasttwo()
+                    return false
+                }
                 this.setState({
                     // 将更新的和之前的合并
                     items: this.state.items.concat(res.data.data.list)
@@ -32,13 +37,18 @@ class ResultList extends Component {
                 })
             })
     }
+    loadingToasttwo() {
+        Toast.loading('正在加载...', 1, () => {
+            Toast.offline('没有更多了', 1);
+        });
+    }
     // 第一次加载组件的时候调用这个钩子，只调用一次
     componentDidMount () {
         this.changeItems( this.props )
         this.scroll = new BetterScroll('.wrapper',{
             probeType: 2,
             pullUpLoad: {
-                threshold: 20
+                threshold: -20
             },
             click: true
         })
