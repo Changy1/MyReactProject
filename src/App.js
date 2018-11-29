@@ -5,6 +5,7 @@ import Search from '@pages/search/Search'
 import Result from '@pages/result/Result'
 import Login from '@pages/login/Login'
 import Detail from '@pages/detail/Detail'
+import Content from '@pages/content/Content'
 
 class App extends Component {
   render() {
@@ -16,7 +17,8 @@ class App extends Component {
           <Route path = '/search' component = { Search }></Route>
           <Route path = '/result' component = { Result }></Route>
           <Route path = '/login' component = { Login }></Route>
-          <Route psth = '/detail' component = {Detail}></Route>
+          <Route path = '/detail' component = { Detail }></Route>
+          <Route path = '/Content' component = { Content }></Route>
         </Switch>
       </div>
     );

@@ -3,7 +3,25 @@ import { ListForGoods } from './Styled'
 import { Toast } from 'antd-mobile'
 import GoodsItem from '@c/Goods/GoodsItem'
 import axios from 'axios'
+/* import inject_unount from '@util/decoratorState' */
+function inject_unount (target) {
+    // 改装组件的componentWillUnmount
+    let next = target.prototype.componentWillUnmount
+    target.prototype.componentWillUnmount = function () {
+        if( next ) next.call(this, ...arguments)
+        this.unmount = true
+    }
 
+    // 改装组件的setState
+    let setState = target.prototype.setState
+    target.prototype.setState = function () {
+        if ( this.unmount ) return false
+        setState.call(this,...arguments)
+    }
+}
+
+
+@inject_unount
 class HomeList extends Component {
     constructor () {
         super()
