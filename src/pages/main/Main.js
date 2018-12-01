@@ -6,6 +6,7 @@ import HomeContainer from './Home/HomeContainer'
 import ClassifyContainer from './Classify/ClassifyContainer'
 import CarContainer from './ShoopingCar/CarContainer'
 import PersonageContainer from './personage/PersonageContainer'
+import connect from '@connect'
 
 import HomeImg from '@as/images/home.png'
 import HomeImgActive from '@as/images/homeactive.png'
@@ -30,6 +31,9 @@ class Main extends Component {
     };
   }
 
+  componentDidMount () {
+    this.props.car_actions.getGoodsForCar()
+  }
   renderItem () {
     let { mainitem } = this.state
     return mainitem.map( item => (
@@ -72,4 +76,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default connect(Main,[{ name: 'car', states: ['info']}])

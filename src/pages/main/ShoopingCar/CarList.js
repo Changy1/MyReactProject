@@ -3,10 +3,15 @@ import { ListForCar } from './CarStyle'
 import CarItem from './CarItem'
 
 class CarList extends Component {
+    renderItem () {
+        return this.props.info.map( item => (
+            <CarItem key = {item.id} info = {item}/>
+        ))
+    }
     render () {
         return (
             <ListForCar>
-                <CarItem />
+              { this.renderItem() }
             </ListForCar>
         )
     }    

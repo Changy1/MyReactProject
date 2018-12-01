@@ -9,6 +9,7 @@
     "babel-plugin-import": "^1.11.0",
     "better-scroll": "^1.13.2",
     "jsonp": "^0.2.1",
+    "lodash": "^4.17.11",
     "react": "^16.6.3",
     "react-app-rewired": "^1.6.2",
     "react-dom": "^16.6.3",
@@ -17,6 +18,7 @@
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.6",
+    "redux-promise-middleware": "^5.1.1",
     "styled-components": "^4.1.1",
     "swiper": "^4.4.2"
   },

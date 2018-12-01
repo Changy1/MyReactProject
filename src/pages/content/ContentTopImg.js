@@ -12,7 +12,7 @@ class ContentTopImg extends Component {
                 <div className = 'swiper-container'>
                     <div className = 'swiper-wrapper'>
                         <div className="swiper-slide">
-                            <img src = 'https://goods5.juancdn.com/goods/181122/8/2/5bf69a5833b089066039626f_800x800.jpg?iopcmd=convert&Q=88&dst=jpg'/>
+                            <img src = {this.props.imgurl} />
                         </div>
                         <div className="swiper-slide">
                             <img src = 'https://goods5.juancdn.com/goods/181122/8/2/5bf69a5833b089066039626f_800x800.jpg?iopcmd=convert&Q=88&dst=jpg'/>

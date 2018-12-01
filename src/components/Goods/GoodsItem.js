@@ -6,15 +6,14 @@ class GoodsItem extends Component {
     goDetail = (item) => {
         let data = { title: '?1'}
         var path = {pathname:'/content' , query: data}
-        this.props.history.push(path)
+        this.props.history.push(
+            `/content?title=${item.title}&img=${item.pic_url || item.picurl}&newprice=${item.priceList ? item.priceList[0].text:item.cprice}&oldprice=${item.priceList ? item.priceList[1].text:item.oprice}&id=${item.goods_id}`
+        )
     }
     render () {
-        console.log(this)
         let { item } = this.props
         return (
-            <ItemForGoods onClick = { () => {
-                console.log(1)
-            this.goDetail(item) }}>
+            <ItemForGoods onClick = { () => {this.goDetail(item) }}>
                 <div className = 'item-img'>
                     <img className = 'mainimg' alt='' src = { item.pic_url || item.picurl } />
                     { item.logo_url ? <div className = 'img-float_bottom'><img alt = '' src = { item.logo_url } /></div> : '' }

@@ -117,7 +117,7 @@ export const BottomTwoForContent = styled.div `
         width: .64rem;
         height: .64rem;
     }
-    span {
+    a {
         color: #6b6b6b;
         font-size: .266667rem;
     }
