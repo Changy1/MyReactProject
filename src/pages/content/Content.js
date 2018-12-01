@@ -6,6 +6,7 @@ import ContentBottom from './ContentBottom'
 
 class Content extends Component {
     render () {
+        console.log(this)
         return (
             <ContentWrapper>
                 <ContentTopImg />

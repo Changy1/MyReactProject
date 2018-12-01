@@ -1,11 +1,20 @@
 import React, { Component, Fragment } from 'react'
 import { ItemForGoods } from '@c/Goods/GoodsStyled'
+import { withRouter } from 'react-router-dom'
 
 class GoodsItem extends Component {
+    goDetail = (item) => {
+        let data = { title: '?1'}
+        var path = {pathname:'/content' , query: data}
+        this.props.history.push(path)
+    }
     render () {
+        console.log(this)
         let { item } = this.props
         return (
-            <ItemForGoods>
+            <ItemForGoods onClick = { () => {
+                console.log(1)
+            this.goDetail(item) }}>
                 <div className = 'item-img'>
                     <img className = 'mainimg' alt='' src = { item.pic_url || item.picurl } />
                     { item.logo_url ? <div className = 'img-float_bottom'><img alt = '' src = { item.logo_url } /></div> : '' }
@@ -35,4 +44,4 @@ class GoodsItem extends Component {
     }
 }
 
-export default GoodsItem
+export default withRouter(GoodsItem)
