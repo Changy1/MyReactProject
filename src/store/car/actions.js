@@ -13,5 +13,11 @@ export default {
             type: types.GET_GOODS,
             payload: api.getInfo()
         }
+    },
+    removeGoodsForCar (info) {
+        return{
+            type: types.REMOVE_GOODS,
+            payload: api.removeInfo(info)
+        }
     }
 }

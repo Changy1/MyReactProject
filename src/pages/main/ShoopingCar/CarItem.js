@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { ItemForCar } from './CarStyle'
+import connect from '@connect'
+import { Toast } from 'antd-mobile'
 
 class CarItem extends Component {
     render () {
@@ -16,7 +18,9 @@ class CarItem extends Component {
                     <div className = 'item-text'>
                         <div className = 'item-text_top'>
                             <p className = 'item-p_one'>{ info.title }</p>
-                            <p className = 'item-p_two'>蓝色 M</p>
+                            {this.props.isShow ? (
+                                <p onClick = { () => { this.removeOne(info) }} className = 'item-p_two'>删除</p>
+                            ) : ( '' )}
                         </div>
                         <div className = 'item-text_bottom'>
                             <p className = 'item-p_three'>
@@ -32,6 +36,18 @@ class CarItem extends Component {
             </ItemForCar>
         )
     }
+    loadingToast() {
+        Toast.loading('正在加载...', 0.5, () => {
+            this.successToast()
+        });
+    }
+    successToast () {
+        Toast.success('删除成功!!!', 0.5);
+      }
+    removeOne = (info) => {
+        this.loadingToast()
+        this.props.car_actions.removeGoodsForCar(info)
+    }
 }
 
-export default CarItem
+export default connect(CarItem, [{ name: 'car'}])

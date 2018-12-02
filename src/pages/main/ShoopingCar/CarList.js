@@ -5,7 +5,7 @@ import CarItem from './CarItem'
 class CarList extends Component {
     renderItem () {
         return this.props.info.map( item => (
-            <CarItem key = {item.id} info = {item}/>
+            <CarItem isShow = {this.props.isShow} key = {item.id} info = {item}/>
         ))
     }
     render () {

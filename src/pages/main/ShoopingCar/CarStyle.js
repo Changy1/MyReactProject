@@ -88,8 +88,9 @@ export const ItemForCar = styled.div`
                     font-size: .373333rem;
                 }
                 .item-p_two {
+                    text-decoration: underline;
                     margin-top: .16rem;
-                    color: #bbb;
+                    color: red;
                     font-size: .373333rem;              
                 }
             }

@@ -20,6 +20,18 @@ const api = {
             },200)
         })
     },
+    removeInfo ({id}) {
+        return new Promise( resolve => {
+            setTimeout(async () => {
+                console.log(id)
+                let { info } = await this.getInfo()
+                _.remove( info, item => item.id === id )
+                this.changeInfo(info)
+
+                resolve({ status: 200, info })
+            },200)
+        })
+    },
     getInfo () {
         return new Promise( resolve => {
             setTimeout(() => {
